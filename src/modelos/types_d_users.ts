@@ -6,7 +6,7 @@ export interface usersInterface{
     mail: string,
     password: string,
     comment: string,
-    experiencias: Array<string>;
+    experiences: Array<string>;
 }
 export type UsersInterfacePublicInfo = Pick<usersInterface, 'id' | 'name' | 'comment'>
 export type newUserInfo = Omit<usersInterface,'id'>
@@ -17,7 +17,7 @@ export const usersSchema = new Schema<usersInterface>({
     mail: String,
     password: String,
     comment: String,
-    experiencias: [{ type: Schema.Types.ObjectId, ref: 'Experience' }]
+    experiences: { type: [Number], default: [] }
 })
 
 export const usersofDB = model<usersInterface>('user',usersSchema)

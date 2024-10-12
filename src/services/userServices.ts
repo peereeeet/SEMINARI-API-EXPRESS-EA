@@ -31,7 +31,7 @@ export const getEntries = {
             if (!user) {
                 throw new Error('User not found');
             }
-            user.experiencias.push(experienceId);
+            user.experiences.push(experienceId);
             await user.save();
             return user;
         } catch (error) {
@@ -46,7 +46,7 @@ export const getEntries = {
                 throw new Error('User not found');
             }
     
-            user.experiencias = user.experiencias.filter(id => id !== experienceId);
+            user.experiences = user.experiences.filter(id => id !== experienceId);
             await user.save(); 
             return user;
         } catch (error) {
@@ -61,7 +61,7 @@ export const getEntries = {
             if (!user) {
                 throw new Error('User not found');
             }
-            return user.experiencias; 
+            return user.experiences; 
         } catch (error) {
             throw new Error(`Could not get experiences: ${error}`);
         }

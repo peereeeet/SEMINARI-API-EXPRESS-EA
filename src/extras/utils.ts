@@ -49,7 +49,7 @@ const toNewUser = (object:any): newUserInfo => {
         mail:parseMail(object.mail),
         password:parsePassword(object.password),
         comment:parseComment(object.comment),
-        experiencias:parseExperiencias(object.experiencias)
+        experiences:parseExperiencias(object.experiencias)
     }
     return newUser
 }
